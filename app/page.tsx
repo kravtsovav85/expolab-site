@@ -15,34 +15,24 @@ function Logo() {
   return <Link href="/" className="brand" aria-label="ExpoLab, главная"><span>exp</span><span className="brand-mark"><Mark /></span><span>lab</span></Link>;
 }
 
-const steps = [
-  ['01', 'Товар', 'Отбираем SKU, которые выдерживают экономику выбранного рынка.'],
-  ['02', 'Модель', 'Считаем цену, комиссии, логистику и операционные расходы.'],
-  ['03', 'Подключение', 'Заводим бренд в готовый юридический и коммерческий контур.'],
-  ['04', 'Продажи', 'Запускаем канал и ведём локальные операции.'],
-  ['05', 'Масштаб', 'Расширяем модель только после появления фактических данных.'],
-];
-
 export default function Home() {
   return (
     <main>
-      <header className="site-header"><Logo /><nav aria-label="Основная навигация"><Link href="/products">Продукты</Link><Link href="/markets">Рынки</Link><Link href="/process">Как подключаем</Link><Link href="/about">О компании</Link></nav><Link href="/contact" className="header-cta">Обсудить подключение</Link></header>
+      <header className="site-header"><Logo /><nav aria-label="Основная навигация"><Link href="/products">Продукты</Link><Link href="/economics">Экономика</Link><Link href="/markets">Рынки</Link><Link href="/about">О компании</Link></nav><Link href="/contact" className="header-cta">Обсудить подключение</Link></header>
       <section className="hero">
-        <div className="hero-copy"><p className="eyebrow">Готовая экспортная инфраструктура</p><h1>Новые рынки.<br /><span>Без своей инфраструктуры.</span></h1><p className="lead">Подключаем ваш бренд к действующему юридическому, коммерческому и операционному контуру в Казахстане, Узбекистане и Беларуси.</p><div className="hero-actions"><Link href="/contact" className="primary">Рассчитать подключение</Link><Link href="/process" className="text-link">Что уже готово <span>→</span></Link></div></div>
+        <div className="hero-copy"><p className="eyebrow">Готовая экспортная инфраструктура</p><h1>Ваш бренд.<br /><span>Наш контур.<br />Новый рынок.</span></h1><p className="lead">Запускайте продажи через наши юрлица и локальную команду — без затрат на создание собственной инфраструктуры.</p><div className="hero-actions"><Link href="/contact" className="primary">Рассчитать подключение</Link><Link href="/process" className="text-link">Как это работает <span>→</span></Link></div></div>
         <div className="hero-lab" aria-label="Схема готовой экспортной инфраструктуры"><div className="dish"><Mark /><span className="dish-note dish-note-a">юрлицо</span><span className="dish-note dish-note-b">канал продаж</span><span className="dish-note dish-note-c">локальные операции</span></div><p>Не набор консультаций, а работающий контур, к которому можно подключить товар.</p></div>
       </section>
       <section className="infrastructure">
-        <div className="infrastructure-heading"><p className="eyebrow">Две модели выхода</p><h2>Инфраструктура нужна.<br /><span>Владеть ею с первого дня — нет.</span></h2></div>
+        <div className="infrastructure-heading"><p className="eyebrow">Экономика подключения</p><h2>Не строить с нуля.<br /><span>Использовать готовое.</span></h2></div>
         <div className="comparison">
-          <article className="comparison-own"><p className="comparison-label">Строить самостоятельно</p><h3>Сначала расходы.<br />Потом рынок.</h3><ul><li>открыть юрлицо и банковский контур</li><li>заключить договоры с площадками</li><li>собрать локальную команду и учёт</li><li>организовать склад и ежедневные операции</li></ul><p className="comparison-result">Капитальные вложения и месяцы подготовки до первой продажи.</p></article>
-          <article className="comparison-expolab"><p className="comparison-label">Подключиться к ExpoLab</p><h3>Сначала рынок.<br />Своя инфраструктура — когда нужна.</h3><ul><li>действующее юридическое лицо</li><li>подключённые каналы продаж</li><li>локальная операционная команда</li><li>управление запуском и продажами</li></ul><p className="comparison-result">Без капитальных затрат на создание контура. Базовая операторская модель — от 100 000 ₽ в месяц.</p></article>
+          <article className="comparison-own"><p className="comparison-label">Своя инфраструктура</p><h3>≈ 500–800 тыс. ₽<small>в месяц</small></h3><p className="comparison-result">Ориентир постоянных расходов на команду, учёт и операции. Создание структуры — отдельно.</p></article>
+          <article className="comparison-expolab"><p className="comparison-label">Оператор ExpoLab · KZ / UZ</p><h3>100 тыс. ₽<small>в месяц за один рынок</small></h3><p className="comparison-result">Тариф за работу через действующее юрлицо и администрирование продаж.</p></article>
         </div>
-        <div className="cost-note"><span>Для сравнения</span><p>Открытие собственного юрлица — 100 000 ₽ за проект плюс обязательные расходы. После этого всё равно понадобятся команда, учёт, договоры и операции.</p></div>
+        <div className="cost-note"><Link href="/economics">Из чего складывается бюджет →</Link><p>Это не полная стоимость выхода: товар, логистика, комиссии, налоги и продвижение считаются отдельно. 500–800 тыс. ₽ — оценка, зависящая от масштаба и страны.</p></div>
       </section>
-      <section className="protocol"><div className="section-heading"><p className="eyebrow">Как подключаем бренд</p><Link href="/process" className="text-link">Подробный процесс <span>→</span></Link></div><div className="steps">{steps.map(([n, title, text]) => <article className="step" key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
-      <section className="markets"><div><p className="eyebrow">Первый контур</p><h2>Три рынка для проверяемого старта.</h2></div><div className="market-links"><Link href="/markets#kazakhstan"><span>Казахстан</span><small>Kaspi.kz</small><b>→</b></Link><Link href="/markets#uzbekistan"><span>Узбекистан</span><small>Uzum Market</small><b>→</b></Link><Link href="/markets#belarus"><span>Беларусь</span><small>21vek.by</small><b>→</b></Link></div></section>
-      <section className="final-cta"><div className="final-mark"><Mark /></div><div><p className="eyebrow">Есть товар и новый рынок?</p><h2>Посчитаем модель без капитальных затрат.</h2></div><Link href="/contact" className="primary inverse">Обсудить подключение</Link></section>
-      <footer><Logo /><p>Готовая экспортная инфраструктура для товарных брендов.</p><div className="footer-links"><Link href="/privacy">Персональные данные</Link><Link href="/legal">Реквизиты</Link><span>© 2026 ExpoLab</span></div></footer>
+      <section className="explore"><div className="section-heading"><h2>Детали — когда нужны.</h2></div><div className="explore-grid"><Link href="/products"><small>01 / Форматы работы</small><h3>Продукты и тарифы <span>↗</span></h3><p>От подключения к площадке до внешнего директора по экспорту.</p></Link><Link href="/markets"><small>02 / География</small><h3>Три рынка <span>↗</span></h3><p>Казахстан · Узбекистан · Беларусь. У каждого — своя модель.</p></Link><Link href="/process"><small>03 / Подключение</small><h3>От товара до продаж <span>↗</span></h3><p>Что готовим мы, что нужно от вас и как начинается работа.</p></Link></div></section>
+      <footer><Logo /><Link href="/about" className="text-link">О компании</Link><div className="footer-links"><Link href="/privacy">Политика конфиденциальности</Link><Link href="/legal">Реквизиты</Link><span>© 2026 ExpoLab</span></div></footer>
     </main>
   );
 }
