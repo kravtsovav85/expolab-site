@@ -59,9 +59,19 @@ const pages = {
     title: 'Посчитаем модель выхода без собственной инфраструктуры.',
     intro: 'Для первого разговора достаточно категории товара, нескольких SKU, текущей цены и понимания маржи. Покажем подходящий рынок, состав готового контура и ежемесячную модель расходов.',
     blocks: [
-      ['Алексей Кравцов', 'Telegram: @AlekseyKravtsov'],
+      ['Написать в Telegram', '@AlekseyKravtsov — основной способ связи'],
       ['Телефон', '8-995-120-25-55'],
       ['Email', 'i@avkravtsov.ru'],
+    ],
+  },
+  legal: {
+    eyebrow: 'Правовая информация',
+    title: 'Реквизиты оператора ExpoLab.',
+    intro: 'Сайт и коммуникации ExpoLab ведёт индивидуальный предприниматель Поддубняк Федор Валерьевич.',
+    blocks: [
+      ['ИП Поддубняк Федор Валерьевич', 'ИНН 540417136596. Адрес: 630088, Россия, Новосибирская область, г. Новосибирск.'],
+      ['Банковские реквизиты', 'Расчётный счёт 40802810602500170708 в ООО «Банк Точка». БИК 044525104. Корреспондентский счёт 30101810745374525104.'],
+      ['Связь по правовым вопросам', 'Email: a@explb.pro. Политика обработки персональных данных доступна по ссылке внизу каждой страницы.'],
     ],
   },
 } as const;
@@ -72,5 +82,5 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const page = pages[slug as keyof typeof pages];
   if (!page) notFound();
-  return <main className="detail-page"><header className="detail-header"><Link href="/" className="detail-brand">exp<span>o</span>lab</Link><Link href="/" className="text-link">← На главную</Link></header><section className="detail-hero"><p className="eyebrow">{page.eyebrow}</p><h1>{page.title}</h1><p>{page.intro}</p></section><section className="detail-grid">{page.blocks.map(([title, text], index) => <article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h2 id={slug === 'markets' ? ['kazakhstan','uzbekistan','belarus'][index] : undefined}>{title}</h2><p>{text}</p></article>)}</section><section className="detail-cta"><h2>Не стройте экспортный контур до первой выручки.</h2><Link href="/contact" className="primary">Обсудить подключение</Link></section></main>;
+  return <main className="detail-page"><header className="detail-header"><Link href="/" className="detail-brand">exp<span>o</span>lab</Link><Link href="/" className="text-link">← На главную</Link></header><section className="detail-hero"><p className="eyebrow">{page.eyebrow}</p><h1>{page.title}</h1><p>{page.intro}</p></section><section className="detail-grid">{page.blocks.map(([title, text], index) => <article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h2 id={slug === 'markets' ? ['kazakhstan','uzbekistan','belarus'][index] : undefined}>{title}</h2><p>{text}</p></article>)}</section>{slug === 'contact' ? <section className="detail-cta"><h2>Обсудим ваш товар и рынок напрямую.</h2><a href="https://t.me/AlekseyKravtsov" target="_blank" rel="noreferrer" className="primary">Написать в Telegram</a></section> : slug !== 'legal' && <section className="detail-cta"><h2>Не стройте экспортный контур до первой выручки.</h2><Link href="/contact" className="primary">Обсудить подключение</Link></section>}<footer className="detail-footer"><Link href="/privacy">Персональные данные</Link><Link href="/legal">Реквизиты</Link><span>© 2026 ExpoLab</span></footer></main>;
 }

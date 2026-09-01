@@ -42,7 +42,7 @@ export default function Home() {
       <section className="protocol"><div className="section-heading"><p className="eyebrow">Как подключаем бренд</p><Link href="/process" className="text-link">Подробный процесс <span>→</span></Link></div><div className="steps">{steps.map(([n, title, text]) => <article className="step" key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
       <section className="markets"><div><p className="eyebrow">Первый контур</p><h2>Три рынка для проверяемого старта.</h2></div><div className="market-links"><Link href="/markets#kazakhstan"><span>Казахстан</span><small>Kaspi.kz</small><b>→</b></Link><Link href="/markets#uzbekistan"><span>Узбекистан</span><small>Uzum Market</small><b>→</b></Link><Link href="/markets#belarus"><span>Беларусь</span><small>21vek.by</small><b>→</b></Link></div></section>
       <section className="final-cta"><div className="final-mark"><Mark /></div><div><p className="eyebrow">Есть товар и новый рынок?</p><h2>Посчитаем модель без капитальных затрат.</h2></div><Link href="/contact" className="primary inverse">Обсудить подключение</Link></section>
-      <footer><Logo /><p>Готовая экспортная инфраструктура для товарных брендов.</p><span>© 2026 ExpoLab</span></footer>
+      <footer><Logo /><p>Готовая экспортная инфраструктура для товарных брендов.</p><div className="footer-links"><Link href="/privacy">Персональные данные</Link><Link href="/legal">Реквизиты</Link><span>© 2026 ExpoLab</span></div></footer>
     </main>
   );
 }
